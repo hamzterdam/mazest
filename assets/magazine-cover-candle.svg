@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 980">
+  <defs>
+    <radialGradient id="light" cx="50%" cy="37%" r="45%"><stop offset="0%" stop-color="#f1d085"/><stop offset="32%" stop-color="#46351f"/><stop offset="100%" stop-color="#020202"/></radialGradient>
+    <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff9df"/><stop offset=".38" stop-color="#f6c35d"/><stop offset="1" stop-color="#111"/></linearGradient>
+  </defs>
+  <rect width="720" height="980" fill="#020202"/>
+  <rect x="70" y="115" width="580" height="710" fill="url(#light)"/>
+  <text x="70" y="92" font-size="74" font-family="Inter,Arial" font-weight="900" fill="#fff">Ma'z Êst</text>
+  <text x="298" y="127" font-size="34" font-family="Inter,Arial" font-weight="800" fill="#fff">Omarê 7</text>
+  <path d="M356 137c22 98 14 170 2 244-13-74-21-146-2-244z" fill="url(#flame)"/>
+  <ellipse cx="358" cy="386" rx="35" ry="42" fill="#d2b078"/>
+  <path d="M320 415h76l32 258H286z" fill="#c3b189"/>
+  <path d="M242 462c32-46 70-65 114-56 44-9 82 10 114 56l15 245H227z" fill="#7c735f"/>
+  <path d="M227 548c44 33 82 47 115 42m143-42c-44 33-82 47-115 42" fill="none" stroke="#a99a80" stroke-width="5" opacity=".55"/>
+  <path d="M292 697c40 32 85 32 131 0 18 52 7 88-35 107h-59c-43-19-55-55-37-107z" fill="#0a0a0a"/>
+  <text x="78" y="866" font-size="38" font-family="Inter,Arial" font-weight="700" fill="#fff">Êr hîş (akıl) ti bib o ti çîk mezon, siba</text>
+  <text x="138" y="908" font-size="38" font-family="Inter,Arial" font-weight="700" fill="#fff">biê hîş çê ti çinê bizon ?</text>
+</svg>

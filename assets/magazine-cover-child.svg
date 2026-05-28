@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 980">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c7c3bc"/><stop offset="1" stop-color="#f5f3ee"/></linearGradient>
+    <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="2" seed="9"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer><feBlend in="SourceGraphic" mode="multiply"/></filter>
+    <style>.t{font:700 54px Georgia,serif;fill:#161616}.s{font:700 18px Georgia,serif;fill:#eee}.orange{fill:#f47c18}</style>
+  </defs>
+  <rect width="720" height="980" fill="url(#bg)" filter="url(#paper)"/>
+  <rect x="46" y="36" width="628" height="908" rx="2" fill="none" stroke="#e6e2dc" stroke-width="10"/>
+  <text x="45" y="78" class="t">Ma'z Êst</text>
+  <text x="61" y="117" class="s">Zazakî Kovare</text><text x="415" y="117" class="s">Hûner û Kultir</text>
+  <rect x="518" y="29" width="105" height="60" fill="#77736d" opacity=".72"/>
+  <text x="535" y="58" font-size="14" font-family="Inter,Arial" fill="#fff">Temmuz</text><text x="537" y="78" font-size="14" font-family="Inter,Arial" fill="#fff">Kaneon 2020</text>
+  <rect x="170" y="255" width="388" height="415" fill="#817974"/>
+  <rect x="375" y="238" width="175" height="210" fill="#9b8477"/>
+  <rect x="400" y="262" width="123" height="146" fill="#c69a6a"/>
+  <path d="M412 273c60 17 87 60 90 124-38-35-69-70-90-124z" fill="#d8d4cc"/>
+  <path d="M229 457c0-72 40-113 105-113s105 41 105 113v134H229z" fill="#522018"/>
+  <ellipse cx="334" cy="536" rx="92" ry="122" fill="#ead6bd"/>
+  <path d="M269 499c41 26 90 26 132 0-8-53-28-81-67-81s-58 27-65 81z" fill="#592419"/>
+  <circle cx="300" cy="535" r="12" fill="#2d2d2b"/><circle cx="372" cy="535" r="12" fill="#2d2d2b"/>
+  <path d="M303 591c24 12 47 12 68 0" fill="none" stroke="#3b1a13" stroke-width="5" stroke-linecap="round"/>
+  <rect x="243" y="660" width="190" height="75" fill="#f2eee7"/>
+  <circle cx="526" cy="668" r="100" class="orange"/>
+  <text x="475" y="646" font-size="44" font-family="Inter,Arial" font-weight="800" fill="#fff">BÎAYÎŞ</text>
+  <text x="174" y="737" font-size="43" font-family="Georgia" font-weight="800" fill="#050505">NÎO ÇÎNÎE BÎAYÎŞ</text>
+</svg>

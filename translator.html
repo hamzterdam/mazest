@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zazaca Çeviri | Ma'z Êst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="translator.css" />
+  </head>
+  <body class="translator-page">
+    <header class="site-header">
+      <a class="brand" href="index.html"><img class="brand-logo" src="assets/logosans.png" alt="" /><span class="brand-name">Ma'z Êst</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" data-copy="navHome">Home</a>
+        <a href="index.html#about" data-copy="navAbout">About Us</a>
+        <a class="active-link" href="research.html" data-copy="navWork">Our Work</a>
+        <a href="publications.html" data-copy="navPublications">Publications</a>
+        <a href="magazine.html" data-copy="navMagazine">Magazine</a>
+        <a href="articles.html" data-copy="navArticles">Articles</a>
+        <a href="resources.html" data-copy="navResources">Resources</a>
+        <a href="index.html#contact" data-copy="navContact">Contact</a>
+      </nav>
+      <div class="language-switch" aria-label="Language">
+        <button class="active" type="button" data-ui-lang="en">EN</button>
+        <button type="button" data-ui-lang="ku">KUR</button>
+        <button type="button" data-ui-lang="za">ZA</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="translator-hero">
+        <div class="translator-hero-inner">
+          <p class="breadcrumb" data-copy="crumb">Home > Our Work > Zazaca Çeviri</p>
+          <div class="title-row">
+            <h1 data-copy="title">Zazaca Çeviri / Wergerê Zazakî</h1>
+            <span class="beta-pill">Beta</span>
+          </div>
+          <p data-copy="intro">The first rule-based Turkish to Zazakî translator prototype by Ma'z Êst. Built for education, digital access and community review.</p>
+          <p class="creator-credit" data-copy="credit">By founder Mrs CELIK, in partnership with Ma'z Êst.</p>
+        </div>
+      </section>
+
+      <section class="translator-wrap">
+        <section class="translator-card" aria-label="Zazaca translator">
+          <div class="translator-panels">
+            <article class="text-panel">
+              <div class="panel-head">
+                <h2>Türkçe</h2>
+                <span data-copy="source">Source Language</span>
+              </div>
+              <div class="textarea-shell">
+                <textarea id="turkishInput" maxlength="1000" spellcheck="false">Dilimiz, kimliğimizdir. Zazaca öğrenmek istiyorum.</textarea>
+                <button class="icon-button clear-button" type="button" aria-label="Clear">×</button>
+              </div>
+              <div class="panel-foot"><span id="charCount">0 / 1000</span></div>
+            </article>
+
+            <div class="swap-divider" aria-hidden="true"><span>⇄</span></div>
+
+            <article class="text-panel">
+              <div class="panel-head">
+                <h2>Zazakî <small>(Dimilî)</small></h2>
+                <span data-copy="target">Target Language</span>
+              </div>
+              <div class="output-shell">
+                <p id="zazakiOutput"></p>
+                <button class="icon-button speaker-button" type="button" aria-label="Speak">♪</button>
+                <button class="icon-button copy-button" type="button" aria-label="Copy">⧉</button>
+              </div>
+              <div class="confidence-row">
+                <span id="confidenceLabel" data-copy="confidence">Rule-based beta</span>
+                <div class="confidence-meter"><span id="confidenceBar"></span></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="translator-actions">
+            <button class="button secondary clear-wide" type="button" data-copy="clear">Clear</button>
+            <button class="button primary translate-button" type="button" data-copy="translate">Translate / Wergerne →</button>
+            <button class="button secondary swap-button" type="button" data-copy="swap">Swap</button>
+            <button class="button secondary copy-wide" type="button" data-copy="copy">Copy</button>
+          </div>
+          <p class="translator-note" data-copy="note">Currently supports Turkish to Zazakî (Dimilî) only. It is a rule-based educational prototype, not an official/legal translator.</p>
+        </section>
+
+        <section class="translator-benefits">
+          <article><span>♢</span><h3 data-copy="benefit1Title">Language Preservation</h3><p data-copy="benefit1Text">Supports the vitality of Zazakî by bringing it into digital spaces.</p></article>
+          <article><span>◎</span><h3 data-copy="benefit2Title">Digital Access</h3><p data-copy="benefit2Text">Makes Zazakî more visible online for speakers, learners and communities.</p></article>
+          <article><span>▣</span><h3 data-copy="benefit3Title">Educational Use</h3><p data-copy="benefit3Text">A helpful tool for students, teachers and independent learners.</p></article>
+          <article><span>⌕</span><h3 data-copy="benefit4Title">Research Support</h3><p data-copy="benefit4Text">Creates a reviewable base for linguists and community contributors.</p></article>
+        </section>
+
+        <section class="translator-grid">
+          <article class="translator-info">
+            <h2 data-copy="whyTitle">Why It Matters</h2>
+            <p data-copy="whyText">Zazakî has limited digital tools. This beta translator improves visibility, access and learning while inviting community review.</p>
+            <div class="status-list">
+              <span data-copy="statusDirection">Turkish → Zazakî</span>
+              <span data-copy="statusBeta">Beta version</span>
+              <span data-copy="statusRules">Rule-based</span>
+              <span data-copy="statusDataset">Bimus dataset</span>
+              <span data-copy="statusCommunity">Community-reviewed</span>
+            </div>
+          </article>
+
+          <article class="translator-info">
+            <div class="section-head compact-head">
+              <h2 data-copy="examplesTitle">Example Translations</h2>
+              <button class="text-link" type="button" id="loadExample" data-copy="moreExamples">View more examples →</button>
+            </div>
+            <div class="example-grid">
+              <button type="button" data-example="Günaydın, nasılsın?"><strong>Günaydın, nasılsın?</strong><span>Roj ti xêrib, ti sênîn?</span></button>
+              <button type="button" data-example="Teşekkür ederim."><strong>Teşekkür ederim.</strong><span>Allah razib.</span></button>
+              <button type="button" data-example="Hepimiz kardeşiz."><strong>Hepimiz kardeşiz.</strong><span>Pîyer ma brê me.</span></button>
+            </div>
+          </article>
+        </section>
+
+        <section class="review-panel">
+          <div>
+            <h2 data-copy="reviewTitle">Translator Review</h2>
+            <p data-copy="reviewText">The public seed dataset is cleaned and professional. The larger Ma'z Êst/Bimus-style vocabulary can be imported progressively after duplicate checks, dialect notes and community validation.</p>
+          </div>
+          <div id="analysisPanel" class="analysis-panel"></div>
+        </section>
+
+        <section class="feedback-card">
+          <div>
+            <h2 data-copy="feedbackTitle">Help Improve This Tool</h2>
+            <p data-copy="feedbackText">Suggest a better translation, report a mistake or volunteer as a Zazakî speaker.</p>
+          </div>
+          <form id="feedbackForm">
+            <input id="feedbackName" placeholder="Name / community" data-copy-placeholder="feedbackNamePlaceholder" />
+            <textarea id="feedbackText" placeholder="Suggested correction or note" data-copy-placeholder="feedbackTextPlaceholder"></textarea>
+            <button class="button primary" type="submit" data-copy="feedbackButton">Share Feedback</button>
+            <p id="feedbackStatus" role="status"></p>
+          </form>
+        </section>
+
+        <section class="resource-cta">
+          <div>
+            <h2 data-copy="resourceCtaTitle">Explore more Zazakî resources</h2>
+            <p data-copy="resourceCtaText">Deepen your knowledge, support preservation and stay connected with our ongoing work.</p>
+          </div>
+          <div>
+            <a class="button secondary" href="teaching-learning.html" data-copy="resourceCtaLearning">Learning Resources</a>
+            <a class="button secondary" href="publications.html" data-copy="resourceCtaPublications">Publications</a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div>
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/logosans.png" alt="" /><span class="brand-name">Ma'z Êst</span></a>
+        <p data-copy="footerCopy">Contact Ma'z Êst</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="index.html#about" data-copy="footerAbout">About Us</a>
+        <a href="research.html" data-copy="footerWork">Our Work</a>
+        <a href="publications.html" data-copy="footerPublications">Publications</a>
+        <a href="magazine.html" data-copy="footerMagazine">Magazine</a>
+        <a href="articles.html" data-copy="footerArticles">Articles</a>
+        <a href="resources.html" data-copy="footerResources">Resources</a>
+      </nav>
+      <div class="contact-emails" aria-label="Contact emails">
+        <a href="https://wa.me/33784695626" target="_blank" rel="noopener">+33 7 84 69 56 26</a>
+        <a href="mailto:ma@mazest.com">ma@mazest.com</a>
+        <a href="mailto:mazestfr@gmail.com">mazestfr@gmail.com</a>
+      </div>
+    </footer>
+
+    <script src="assets/translator-bimus-seed.js"></script>
+    <script src="assets/translator-user-provided-seed.js"></script>
+    <script src="translator.js?v=20260528-contact-section"></script>
+  </body>
+</html>

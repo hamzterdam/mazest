@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 980">
+  <defs><linearGradient id="pink" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9d6d68"/><stop offset=".55" stop-color="#d4a8bb"/><stop offset="1" stop-color="#d5bfce"/></linearGradient></defs>
+  <rect width="720" height="980" fill="url(#pink)"/>
+  <text x="43" y="88" font-size="62" font-family="Georgia" font-weight="700" fill="#fff">Ma'z Êst</text>
+  <text x="384" y="85" font-size="82" font-family="Georgia" font-weight="700" fill="#ff6b17">1</text>
+  <text x="67" y="127" font-size="19" font-family="Georgia" fill="#fff">Zazakî Kovare</text><text x="405" y="127" font-size="19" font-family="Georgia" fill="#fff">Hûner û Kultir</text>
+  <rect x="180" y="290" width="358" height="476" fill="#b8cba3"/>
+  <rect x="230" y="345" width="250" height="185" fill="#ccdfad" opacity=".58"/>
+  <path d="M330 470h100l-20 118H302z" fill="#f6e0c9"/>
+  <path d="M284 447c49-60 132-51 172 0-10 56-46 89-86 89s-72-33-86-89z" fill="#111"/>
+  <ellipse cx="365" cy="554" rx="78" ry="99" fill="#f6d8bf"/>
+  <circle cx="336" cy="545" r="9" fill="#1e1b18"/><circle cx="391" cy="545" r="9" fill="#1e1b18"/>
+  <circle cx="304" cy="581" r="18" fill="#ec6f65" opacity=".8"/><circle cx="421" cy="581" r="18" fill="#ec6f65" opacity=".8"/>
+  <path d="M338 610c23 13 45 13 66 0" fill="none" stroke="#9b2e25" stroke-width="4" stroke-linecap="round"/>
+  <path d="M296 651c40 46 90 48 143 0l16 115H280z" fill="#efe6d3"/>
+  <circle cx="305" cy="695" r="12" fill="#d65259"/><circle cx="375" cy="702" r="12" fill="#d65259"/><circle cx="426" cy="681" r="12" fill="#d65259"/>
+  <path d="M251 698c45 14 70 45 74 92" fill="none" stroke="#2c3b24" stroke-width="5"/>
+  <text x="326" y="332" font-size="22" font-family="Inter,Arial" transform="rotate(-90 326 332)" fill="#111">Tirkî qalkên  Erebî qalkên  Îngilizî qalkên  Ma lai!</text>
+  <circle cx="540" cy="641" r="110" fill="#ff6b17"/>
+  <text x="470" y="626" font-size="70" font-family="Georgia" font-weight="700" fill="#fff">Rûêc</text>
+  <text x="197" y="746" font-size="52" font-family="Inter,Arial" font-weight="800" fill="#111">Zûwonday Gerdûn</text>
+</svg>

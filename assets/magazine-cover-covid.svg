@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 980">
+  <defs>
+    <radialGradient id="fog" cx="50%" cy="38%" r="68%">
+      <stop offset="0%" stop-color="#d7d9d5"/>
+      <stop offset="62%" stop-color="#f2f2ee"/>
+      <stop offset="100%" stop-color="#c9d7df"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="4"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .16"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <style>
+      .title{font:700 52px Georgia,serif;fill:#0f0f0f}.small{font:700 20px Georgia,serif;fill:#111}
+      .red{fill:#d53716}.white{fill:#fff}.green{fill:#163b2f}.gold{fill:#a7803f}
+    </style>
+  </defs>
+  <rect width="720" height="980" fill="#f5f5f0"/>
+  <rect x="0" y="120" width="720" height="610" fill="url(#fog)" filter="url(#grain)"/>
+  <path d="M0 694h720v286H0z" fill="#d9e7ef"/>
+  <path d="M0 777h720v203H0z" fill="#f1efea"/>
+  <text x="35" y="78" class="title">Ma'z Êst</text><text x="238" y="76" font-size="66" font-family="Georgia" font-weight="700" fill="#d53716">2</text>
+  <text x="36" y="117" class="small">Zazakî Kovare</text><text x="475" y="117" class="small">Hûner û Kultir</text>
+  <text x="610" y="54" font-size="23" font-family="Inter,Arial" fill="#111">Bedel 10 €</text>
+  <path class="gold" d="M126 86c78 44 158 44 240 0v16c-80 50-161 50-240 0z"/>
+  <circle cx="246" cy="96" r="24" fill="#b47d35"/><circle cx="246" cy="96" r="12" fill="#d53716"/>
+  <g transform="translate(150 190)">
+    <path d="M145 80c-55 0-96 40-96 92v484h316V172c0-52-41-92-96-92z" fill="#172820"/>
+    <path d="M117 87c29 28 153 28 183 0 0-38-29-64-91-64s-92 26-92 64z" fill="#08120f"/>
+    <rect x="173" y="150" width="73" height="280" fill="#fff"/>
+    <path d="M202 170h42l-25 244h-34z" fill="#e05a1f"/>
+    <path d="M51 180c105 42 210 42 314 0v36c-99 43-204 43-314 0z" opacity=".18"/>
+    <path d="M83 654h70v82H83zm177 0h70v82h-70z" fill="#b87332"/>
+  </g>
+  <g>
+    <circle cx="365" cy="322" r="58" fill="#18a956"/>
+    <circle cx="246" cy="227" r="34" fill="#16a552"/><circle cx="480" cy="228" r="34" fill="#1db85f"/>
+    <circle cx="565" cy="297" r="31" fill="#18a956"/><circle cx="155" cy="306" r="36" fill="#18a956"/>
+    <g stroke="#0f7d3e" stroke-width="5" stroke-linecap="round">
+      <path d="M365 248v-26M365 396v28M291 322h-31M439 322h31M315 272l-22-23M415 272l22-23M315 372l-22 23M415 372l22 23"/>
+      <path d="M246 188v-19M246 266v21M210 227h-21M282 227h21M480 190v-20M480 266v21M444 228h-21M516 228h21"/>
+    </g>
+  </g>
+  <text x="442" y="596" font-size="92" font-family="Georgia" fill="#fff">Jon</text>
+  <text x="168" y="692" font-size="76" font-family="Georgia" font-weight="700" fill="#d53716">COVID-19</text>
+  <text x="34" y="928" font-size="35" font-family="Inter,Arial" fill="#fff">Nîson - Gûlon</text>
+  <text x="86" y="965" font-size="34" font-family="Inter,Arial" fill="#fff">2020</text>
+</svg>
