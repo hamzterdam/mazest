@@ -595,6 +595,7 @@ function navHtml(lang) {
     ["articles.html", "articles", n.articles],
     ["resources.html", "resources", n.resources],
     ["reports.html", "reports", n.reports],
+    ["abonnement/", "subscribe", lang === "ku" ? "Abone bibin" : lang === "za" ? "Abone bıbe" : "Subscribe"],
     ["index.html#contact", "contact", n.contact]
   ].map(([href, key, label]) => `<a href="${href}" data-page="${key}">${label}</a>`).join("");
 }

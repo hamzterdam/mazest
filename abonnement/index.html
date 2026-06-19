@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Subscribe to Ma'z Êst or make a one-time contribution to support Kurdish language documentation, Zazakî resources and cultural publications." />
+    <title>Subscribe to Ma'z Êst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Ma'z Êst home">
+        <img src="../assets/logosans.png" alt="" />
+        <span>Ma'z Êst</span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="../index.html" data-copy="navHome">Home</a>
+        <a href="../magazine.html" data-copy="navMagazine">Magazine</a>
+        <a href="../translator.html" data-copy="navTranslator">Translator</a>
+        <a href="../index.html#contact" data-copy="navContact">Contact</a>
+      </nav>
+      <div class="language-switch" aria-label="Language">
+        <button type="button" class="active" data-lang="en">EN</button>
+        <button type="button" data-lang="tr">TR</button>
+        <button type="button" data-lang="za">ZA</button>
+        <button type="button" data-lang="ku">KUR</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow" data-copy="heroEyebrow">Support Ma'z Êst</p>
+          <h1 data-copy="heroTitle">Subscribe and help keep Zazakî alive online.</h1>
+          <p data-copy="heroText">Your support helps us publish Ma'z Êst Magazine, build Zazakî learning tools, document Kurdish languages and keep resources accessible to everyone.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#plans" data-copy="heroCta">Choose a plan</a>
+            <a class="button secondary" href="#one-time" data-copy="heroGift">Give once</a>
+          </div>
+        </div>
+        <aside class="impact-card">
+          <span data-copy="impactLabel">Recommended</span>
+          <strong>7 € / <span data-copy="monthShort">month</span></strong>
+          <p data-copy="impactText">A realistic monthly amount for readers who want to support regular publications and digital tools.</p>
+        </aside>
+      </section>
+
+      <section class="plans-section" id="plans">
+        <div class="section-head">
+          <p class="eyebrow" data-copy="plansEyebrow">Subscription system</p>
+          <h2 data-copy="plansTitle">Choose monthly or annual support</h2>
+          <p data-copy="plansText">These amounts are designed to stay accessible while giving Ma'z Êst stable support.</p>
+        </div>
+
+        <div class="billing-tabs" role="tablist" aria-label="Billing period">
+          <button class="active" type="button" data-billing="monthly" data-copy="monthly">Monthly</button>
+          <button type="button" data-billing="annual" data-copy="annual">Annual</button>
+        </div>
+
+        <div class="plan-grid" data-plan-grid></div>
+      </section>
+
+      <section class="one-time" id="one-time">
+        <div>
+          <p class="eyebrow" data-copy="oneTimeEyebrow">One-time payment</p>
+          <h2 data-copy="oneTimeTitle">Choose your own amount</h2>
+          <p data-copy="oneTimeText">If you prefer not to subscribe, you can make a one-time contribution. Suggested minimum: 5 €.</p>
+        </div>
+        <form class="custom-amount-form">
+          <label for="customAmount" data-copy="amountLabel">Amount in euros</label>
+          <div class="amount-row">
+            <input id="customAmount" name="amount" type="number" min="5" step="1" value="20" />
+            <button class="button primary" type="submit" data-copy="supportOnce">Support once</button>
+          </div>
+          <p class="form-note" data-copy="paymentNote">Payment links are prepared for Stripe or PayPal. Until they are connected, the button opens an email request.</p>
+        </form>
+      </section>
+
+      <section class="use-section">
+        <p class="eyebrow" data-copy="useEyebrow">What your support funds</p>
+        <div class="use-grid">
+          <article><h3 data-copy="use1Title">Magazine and articles</h3><p data-copy="use1Text">Editing, publishing and archiving Ma'z Êst issues and cultural articles.</p></article>
+          <article><h3 data-copy="use2Title">Zazakî tools</h3><p data-copy="use2Text">Translator data, Bimus learning resources and digital language materials.</p></article>
+          <article><h3 data-copy="use3Title">Documentation</h3><p data-copy="use3Text">Research, dictionaries, oral material and endangered-language documentation.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="../index.html"><img src="../assets/logosans.png" alt="" /><span>Ma'z Êst</span></a>
+      <p data-copy="footerText">Thank you for supporting language, culture and memory.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
