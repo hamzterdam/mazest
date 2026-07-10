@@ -8,6 +8,13 @@ const PAYMENT_LINKS = {
   oneTime: "https://donate.stripe.com/9B65kCgC92M99nD9mi08g07"
 };
 
+const STRIPE_LOCALES = {
+  en: "en",
+  tr: "tr",
+  za: "en",
+  ku: "en"
+};
+
 const copy = {
   en: {
     navHome: "Home",
@@ -228,7 +235,11 @@ function setLanguage(lang) {
 
 function requestLink(planKey, amount, label) {
   const link = PAYMENT_LINKS[planKey];
-  if (link) return link;
+  if (link) {
+    const url = new URL(link);
+    url.searchParams.set("locale", STRIPE_LOCALES[currentLang] || "auto");
+    return url.toString();
+  }
   const subject = encodeURIComponent(`Ma'z Êst subscription - ${label}`);
   const body = encodeURIComponent(`Hello,\n\nI would like to support Ma'z Êst with this option:\n${label} - ${amount} €.\n\nPlease send me the payment link.\n`);
   return `mailto:mazestfr@gmail.com?subject=${subject}&body=${body}`;
