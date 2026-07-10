@@ -1,11 +1,11 @@
 const PAYMENT_LINKS = {
-  monthly3: "",
-  monthly7: "",
-  monthly15: "",
-  annual30: "",
-  annual70: "",
-  annual150: "",
-  oneTime: ""
+  monthly3: "https://buy.stripe.com/28E14mfy5fyV6br7ea08g01",
+  monthly7: "https://buy.stripe.com/bJeeVc1Hf86t1Vb0PM08g02",
+  monthly15: "https://buy.stripe.com/dRmbJ05XvaeB0R7gOK08g03",
+  annual30: "https://buy.stripe.com/bJebJ0dpX4Uh1Vbbuq08g04",
+  annual70: "https://buy.stripe.com/28E7sK2LjgCZarH56208g05",
+  annual150: "https://buy.stripe.com/dRmbJ0fy59ax2ZfdCy08g06",
+  oneTime: "https://donate.stripe.com/9B65kCgC92M99nD9mi08g07"
 };
 
 const copy = {
