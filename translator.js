@@ -348,7 +348,34 @@ const uiState = {
   exampleIndex: 0
 };
 
-let currentUiLang = localStorage.getItem("mazestTranslatorLang") || "en";
+Object.assign(uiCopy, {
+  fr: { ...uiCopy.en, navHome: "Accueil", navAbout: "À propos", navWork: "Notre travail", navPublications: "Publications", navMagazine: "Magazine", navArticles: "Articles", navResources: "Ressources", navContact: "Contact", source: "Langue source", target: "Langue cible", clear: "Effacer", copy: "Copier", subscribe: "S'abonner" },
+  de: { ...uiCopy.en, navHome: "Startseite", navAbout: "Über uns", navWork: "Unsere Arbeit", navPublications: "Publikationen", navMagazine: "Magazin", navArticles: "Artikel", navResources: "Ressourcen", navContact: "Kontakt", source: "Ausgangssprache", target: "Zielsprache", clear: "Löschen", copy: "Kopieren", subscribe: "Abonnieren" },
+  tr: { ...uiCopy.en, navHome: "Ana sayfa", navAbout: "Hakkımızda", navWork: "Çalışmalarımız", navPublications: "Yayınlar", navMagazine: "Dergi", navArticles: "Yazılar", navResources: "Kaynaklar", navContact: "İletişim", source: "Kaynak dil", target: "Hedef dil", clear: "Temizle", copy: "Kopyala", subscribe: "Abone ol" }
+});
+
+function detectPreferredLanguage() {
+  const supported = ["en", "fr", "de", "tr", "ku", "za"];
+  const languages = navigator.languages?.length ? navigator.languages : [navigator.language || "en"];
+  for (const locale of languages) {
+    const normalized = locale.toLowerCase().replace("_", "-");
+    const language = normalized.split("-")[0];
+    const region = normalized.split("-")[1];
+    if (normalized === "zza" || normalized.startsWith("zza-")) return "za";
+    if (supported.includes(language)) return language;
+    if (region === "fr") return "fr";
+    if (region === "de") return "de";
+    if (region === "tr") return "tr";
+    if (region === "gb" || region === "us") return "en";
+  }
+  return "en";
+}
+
+function getInitialLanguage() {
+  return localStorage.getItem("mazestTranslatorLang") || detectPreferredLanguage();
+}
+
+let currentUiLang = getInitialLanguage();
 
 const input = document.querySelector("#turkishInput");
 const output = document.querySelector("#zazakiOutput");
@@ -572,10 +599,10 @@ function renderAnalysis(result) {
   analysisPanel.innerHTML = chips.join("");
 }
 
-function setLanguage(lang) {
+function setLanguage(lang, persist = true) {
   currentUiLang = lang;
   const dictionary = uiCopy[lang] || uiCopy.en;
-  document.documentElement.lang = lang === "za" ? "zza" : lang === "ku" ? "ku" : "en";
+  document.documentElement.lang = lang === "za" ? "zza" : lang;
   document.querySelectorAll("[data-copy]").forEach((el) => {
     const key = el.dataset.copy;
     el.textContent = dictionary[key] || uiCopy.en[key] || el.textContent;
@@ -588,7 +615,7 @@ function setLanguage(lang) {
   document.querySelectorAll("[data-ui-lang]").forEach((button) => {
     button.classList.toggle("active", button.dataset.uiLang === lang);
   });
-  localStorage.setItem("mazestTranslatorLang", lang);
+  if (persist) localStorage.setItem("mazestTranslatorLang", lang);
   render();
 }
 
@@ -599,7 +626,7 @@ document.querySelector(".nav-toggle")?.addEventListener("click", () => {
 });
 
 document.querySelectorAll("[data-ui-lang]").forEach((button) => {
-  button.addEventListener("click", () => setLanguage(button.dataset.uiLang));
+  button.addEventListener("click", () => setLanguage(button.dataset.uiLang, true));
 });
 
 input.addEventListener("input", render);
@@ -662,5 +689,5 @@ feedbackForm.addEventListener("submit", (event) => {
   feedbackForm.reset();
 });
 
-setLanguage(localStorage.getItem("mazestTranslatorLang") || "en");
+setLanguage(getInitialLanguage(), Boolean(localStorage.getItem("mazestTranslatorLang")));
 render();

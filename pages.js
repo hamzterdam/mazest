@@ -1,11 +1,17 @@
 const pageCopy = {
   nav: {
     en: { home: "Home", about: "About Us", work: "Our Work", publications: "Publications", magazine: "Magazine", articles: "Articles", resources: "Resources", reports: "Reports", contact: "Contact" },
+    fr: { home: "Accueil", about: "À propos", work: "Notre travail", publications: "Publications", magazine: "Magazine", articles: "Articles", resources: "Ressources", reports: "Rapports", contact: "Contact" },
+    de: { home: "Startseite", about: "Über uns", work: "Unsere Arbeit", publications: "Publikationen", magazine: "Magazin", articles: "Artikel", resources: "Ressourcen", reports: "Berichte", contact: "Kontakt" },
+    tr: { home: "Ana sayfa", about: "Hakkımızda", work: "Çalışmalarımız", publications: "Yayınlar", magazine: "Dergi", articles: "Yazılar", resources: "Kaynaklar", reports: "Raporlar", contact: "İletişim" },
     ku: { home: "Destpêk", about: "Derbarê me", work: "Karê me", publications: "Weşan", magazine: "Kovar", articles: "Gotar", resources: "Çavkanî", reports: "Rapor", contact: "Têkilî" },
     za: { home: "Keye", about: "Derheqê Ma de", work: "Karê Ma", publications: "Weşanê Ma", magazine: "Kovar", articles: "Nuşteyî", resources: "Çımeyî", reports: "Raporî", contact: "Têkilî" }
   },
   common: {
     en: { search: "Search", apply: "Apply Filters", viewAll: "View all", email: "Enter your email", subscribe: "Subscribe", privacy: "We respect your privacy.", footer: "A language is not just words. It is memory, culture, identity and future." },
+    fr: { search: "Rechercher", apply: "Appliquer les filtres", viewAll: "Tout voir", email: "Entrez votre email", subscribe: "S'abonner", privacy: "Nous respectons votre vie privée.", footer: "Une langue n'est pas seulement faite de mots. Elle porte mémoire, culture, identité et avenir." },
+    de: { search: "Suchen", apply: "Filter anwenden", viewAll: "Alle anzeigen", email: "E-Mail eingeben", subscribe: "Abonnieren", privacy: "Wir respektieren Ihre Privatsphäre.", footer: "Eine Sprache ist nicht nur aus Wörtern gemacht. Sie trägt Erinnerung, Kultur, Identität und Zukunft." },
+    tr: { search: "Ara", apply: "Filtreleri uygula", viewAll: "Tümünü gör", email: "E-posta adresinizi girin", subscribe: "Abone ol", privacy: "Gizliliğinize saygı duyuyoruz.", footer: "Dil yalnızca kelimeler değildir. Hafıza, kültür, kimlik ve gelecektir." },
     ku: { search: "Lê bigere", apply: "Parzûnan bikar bîne", viewAll: "Hemû bibîne", email: "E-nameya xwe binivîse", subscribe: "Abone bibin", privacy: "Em rêzê li taybetiya we digirin.", footer: "Ziman tenê peyv nîne. Ew bîr, çand, nasname û pêşeroj e." },
     za: { search: "Cı geyre", apply: "Fîltreyan bişuxulne", viewAll: "Hemey bıvêne", email: "Adresa e-posteyî", subscribe: "Abone bıbe", privacy: "Ma taybetîya şima rê hurmet kenê.", footer: "Kovarê Ma’z Êst semedê zengînê Zazakî/Kirdkî." }
   },
@@ -586,6 +592,14 @@ function setActiveNav() {
 
 function navHtml(lang) {
   const n = t(lang, "nav");
+  const subscribeLabel = {
+    en: "Subscribe",
+    fr: "S'abonner",
+    de: "Abonnieren",
+    tr: "Abone ol",
+    ku: "Abone bibin",
+    za: "Abone bıbe"
+  };
   return [
     ["index.html", "home", n.home],
     ["index.html#about", "about", n.about],
@@ -595,7 +609,7 @@ function navHtml(lang) {
     ["articles.html", "articles", n.articles],
     ["resources.html", "resources", n.resources],
     ["reports.html", "reports", n.reports],
-    ["abonnement/", "subscribe", lang === "ku" ? "Abone bibin" : lang === "za" ? "Abone bıbe" : "Subscribe"],
+    ["abonnement/", "subscribe", subscribeLabel[lang] || subscribeLabel.en],
     ["index.html#contact", "contact", n.contact]
   ].map(([href, key, label]) => `<a href="${href}" data-page="${key}">${label}</a>`).join("");
 }
@@ -782,7 +796,28 @@ function renderReferencePage(data, lang) {
   </div>`;
 }
 
-function renderPage(lang) {
+function detectPreferredLanguage() {
+  const supported = ["en", "fr", "de", "tr", "ku", "za"];
+  const languages = navigator.languages?.length ? navigator.languages : [navigator.language || "en"];
+  for (const locale of languages) {
+    const normalized = locale.toLowerCase().replace("_", "-");
+    const language = normalized.split("-")[0];
+    const region = normalized.split("-")[1];
+    if (normalized === "zza" || normalized.startsWith("zza-")) return "za";
+    if (supported.includes(language)) return language;
+    if (region === "fr") return "fr";
+    if (region === "de") return "de";
+    if (region === "tr") return "tr";
+    if (region === "gb" || region === "us") return "en";
+  }
+  return "en";
+}
+
+function getInitialLanguage() {
+  return localStorage.getItem("mazest-language") || detectPreferredLanguage();
+}
+
+function renderPage(lang, persist = true) {
   const data = pageCopy[page][lang] || pageCopy[page].en;
   renderHeader(lang);
   document.querySelector(".page-header").innerHTML = pageHero({ ...data, hero: pageCopy[page].hero });
@@ -796,10 +831,10 @@ function renderPage(lang) {
   document.querySelector(".quote-footer blockquote").textContent = t(lang, "common").footer;
   document.documentElement.lang = lang === "za" ? "zza" : lang;
   langButtons.forEach((button) => button.classList.toggle("active", button.dataset.lang === lang));
-  localStorage.setItem("mazest-language", lang);
+  if (persist) localStorage.setItem("mazest-language", lang);
 }
 
-langButtons.forEach((button) => button.addEventListener("click", () => renderPage(button.dataset.lang)));
+langButtons.forEach((button) => button.addEventListener("click", () => renderPage(button.dataset.lang, true)));
 
 menuButton.addEventListener("click", () => {
   const open = nav.classList.toggle("open");
@@ -817,4 +852,4 @@ document.addEventListener("submit", (event) => {
   event.preventDefault();
 });
 
-renderPage(localStorage.getItem("mazest-language") || "en");
+renderPage(getInitialLanguage(), Boolean(localStorage.getItem("mazest-language")));

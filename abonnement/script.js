@@ -10,6 +10,8 @@ const PAYMENT_LINKS = {
 
 const STRIPE_LOCALES = {
   en: "en",
+  fr: "fr",
+  de: "de",
   tr: "tr",
   za: "en",
   ku: "en"
@@ -210,18 +212,139 @@ const copy = {
   }
 };
 
+copy.fr = {
+  ...copy.en,
+  navHome: "Accueil",
+  navMagazine: "Magazine",
+  navTranslator: "Traducteur",
+  navContact: "Contact",
+  heroEyebrow: "Soutenir Ma'z Êst",
+  heroTitle: "Abonnez-vous et aidez à garder le Zazakî vivant en ligne.",
+  heroText: "Votre soutien nous aide à publier le magazine Ma'z Êst, créer des outils d'apprentissage du Zazakî, documenter les langues kurdes et garder les ressources accessibles à tous.",
+  heroCta: "Choisir une formule",
+  heroGift: "Donner une fois",
+  impactLabel: "Recommandé",
+  monthShort: "mois",
+  impactText: "Un montant mensuel réaliste pour soutenir les publications régulières et les outils numériques.",
+  plansEyebrow: "Système d'abonnement",
+  plansTitle: "Choisissez un soutien mensuel ou annuel",
+  plansText: "Ces montants restent accessibles tout en donnant à Ma'z Êst un soutien stable.",
+  monthly: "Mensuel",
+  annual: "Annuel",
+  oneTimeEyebrow: "Paiement unique",
+  oneTimeTitle: "Choisissez votre montant",
+  oneTimeText: "Si vous préférez ne pas vous abonner, vous pouvez faire une contribution unique. Minimum suggéré : 5 €.",
+  amountLabel: "Montant en euros",
+  supportOnce: "Soutenir une fois",
+  paymentNote: "Paiement sécurisé via Stripe.",
+  useEyebrow: "Ce que votre soutien finance",
+  use1Title: "Magazine et articles",
+  use1Text: "Édition, publication et archivage des numéros Ma'z Êst et des articles culturels.",
+  use2Title: "Outils Zazakî",
+  use2Text: "Données du traducteur, ressources Bimus et supports linguistiques numériques.",
+  use3Title: "Documentation",
+  use3Text: "Recherche, dictionnaires, matériaux oraux et documentation des langues menacées.",
+  footerText: "Merci de soutenir la langue, la culture et la mémoire.",
+  choose: "Choisir cette formule",
+  perMonth: "/ mois",
+  perYear: "/ an",
+  plans: {
+    monthly: [
+      ["Ami", 3, "monthly3", ["Soutien accessible", "Aide à maintenir les ressources en ligne", "Actualités des soutiens"]],
+      ["Soutien", 7, "monthly7", ["Montant recommandé", "Soutient le magazine et les outils", "Actualités des soutiens"], true],
+      ["Mécène", 15, "monthly15", ["Soutien mensuel fort", "Aide à financer de nouvelles ressources", "Actualités des soutiens"]]
+    ],
+    annual: [
+      ["Ami", 30, "annual30", ["Soutien annuel simple", "Aide à maintenir les ressources en ligne", "Actualités des soutiens"]],
+      ["Soutien", 70, "annual70", ["Soutien annuel recommandé", "Soutient le magazine et les outils", "Actualités des soutiens"], true],
+      ["Mécène", 150, "annual150", ["Soutien annuel fort", "Aide à financer de nouvelles ressources", "Actualités des soutiens"]]
+    ]
+  }
+};
+
+copy.de = {
+  ...copy.en,
+  navHome: "Startseite",
+  navMagazine: "Magazin",
+  navTranslator: "Übersetzer",
+  navContact: "Kontakt",
+  heroEyebrow: "Ma'z Êst unterstützen",
+  heroTitle: "Abonnieren Sie und helfen Sie, Zazakî online lebendig zu halten.",
+  heroText: "Ihre Unterstützung hilft uns, das Ma'z Êst Magazin zu veröffentlichen, Zazakî-Lernwerkzeuge zu entwickeln, kurdische Sprachen zu dokumentieren und Ressourcen zugänglich zu halten.",
+  heroCta: "Plan wählen",
+  heroGift: "Einmal spenden",
+  impactLabel: "Empfohlen",
+  monthShort: "Monat",
+  impactText: "Ein realistischer monatlicher Betrag für Leser, die regelmäßige Publikationen und digitale Werkzeuge unterstützen möchten.",
+  plansEyebrow: "Abonnementsystem",
+  plansTitle: "Wählen Sie monatliche oder jährliche Unterstützung",
+  plansText: "Diese Beträge bleiben zugänglich und geben Ma'z Êst zugleich stabile Unterstützung.",
+  monthly: "Monatlich",
+  annual: "Jährlich",
+  oneTimeEyebrow: "Einmalzahlung",
+  oneTimeTitle: "Eigenen Betrag wählen",
+  oneTimeText: "Wenn Sie kein Abo möchten, können Sie einmalig beitragen. Empfohlenes Minimum: 5 €.",
+  amountLabel: "Betrag in Euro",
+  supportOnce: "Einmal unterstützen",
+  paymentNote: "Sichere Zahlung über Stripe.",
+  useEyebrow: "Was Ihre Unterstützung finanziert",
+  use1Title: "Magazin und Artikel",
+  use1Text: "Redaktion, Veröffentlichung und Archivierung von Ma'z Êst-Ausgaben und Kulturartikeln.",
+  use2Title: "Zazakî-Werkzeuge",
+  use2Text: "Übersetzerdaten, Bimus-Lernressourcen und digitale Sprachmaterialien.",
+  use3Title: "Dokumentation",
+  use3Text: "Forschung, Wörterbücher, mündliches Material und Dokumentation gefährdeter Sprachen.",
+  footerText: "Danke für Ihre Unterstützung von Sprache, Kultur und Erinnerung.",
+  choose: "Diesen Plan wählen",
+  perMonth: "/ Monat",
+  perYear: "/ Jahr",
+  plans: {
+    monthly: [
+      ["Freund", 3, "monthly3", ["Zugängliche Unterstützung", "Hilft, Ressourcen online zu halten", "Updates für Unterstützer"]],
+      ["Unterstützer", 7, "monthly7", ["Empfohlener Betrag", "Unterstützt Magazin und Werkzeuge", "Updates für Unterstützer"], true],
+      ["Förderer", 15, "monthly15", ["Starke monatliche Unterstützung", "Hilft, neue Ressourcen zu finanzieren", "Updates für Unterstützer"]]
+    ],
+    annual: [
+      ["Freund", 30, "annual30", ["Einfache jährliche Unterstützung", "Hilft, Ressourcen online zu halten", "Updates für Unterstützer"]],
+      ["Unterstützer", 70, "annual70", ["Empfohlene jährliche Unterstützung", "Unterstützt Magazin und Werkzeuge", "Updates für Unterstützer"], true],
+      ["Förderer", 150, "annual150", ["Starke jährliche Unterstützung", "Hilft, neue Ressourcen zu finanzieren", "Updates für Unterstützer"]]
+    ]
+  }
+};
+
 const buttons = document.querySelectorAll("[data-lang]");
 const billingButtons = document.querySelectorAll("[data-billing]");
 const planGrid = document.querySelector("[data-plan-grid]");
 const customAmountForm = document.querySelector(".custom-amount-form");
-let currentLang = localStorage.getItem("mazest-subscribe-language") || "en";
+function detectPreferredLanguage() {
+  const supported = ["en", "fr", "de", "tr", "ku", "za"];
+  const languages = navigator.languages?.length ? navigator.languages : [navigator.language || "en"];
+  for (const locale of languages) {
+    const normalized = locale.toLowerCase().replace("_", "-");
+    const language = normalized.split("-")[0];
+    const region = normalized.split("-")[1];
+    if (normalized === "zza" || normalized.startsWith("zza-")) return "za";
+    if (supported.includes(language)) return language;
+    if (region === "fr") return "fr";
+    if (region === "de") return "de";
+    if (region === "tr") return "tr";
+    if (region === "gb" || region === "us") return "en";
+  }
+  return "en";
+}
+
+function getInitialLanguage() {
+  return localStorage.getItem("mazest-subscribe-language") || detectPreferredLanguage();
+}
+
+let currentLang = getInitialLanguage();
 let currentBilling = "monthly";
 
 function text(key) {
   return copy[currentLang][key] || copy.en[key] || "";
 }
 
-function setLanguage(lang) {
+function setLanguage(lang, persist = true) {
   currentLang = copy[lang] ? lang : "en";
   document.documentElement.lang = currentLang === "za" ? "zza" : currentLang;
   document.querySelectorAll("[data-copy]").forEach((node) => {
@@ -229,7 +352,7 @@ function setLanguage(lang) {
     if (value) node.textContent = value;
   });
   buttons.forEach((button) => button.classList.toggle("active", button.dataset.lang === currentLang));
-  localStorage.setItem("mazest-subscribe-language", currentLang);
+  if (persist) localStorage.setItem("mazest-subscribe-language", currentLang);
   renderPlans();
 }
 
@@ -258,7 +381,7 @@ function renderPlans() {
   `).join("");
 }
 
-buttons.forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
+buttons.forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang, true)));
 billingButtons.forEach((button) => {
   button.addEventListener("click", () => {
     currentBilling = button.dataset.billing;
@@ -273,4 +396,4 @@ customAmountForm.addEventListener("submit", (event) => {
   window.location.href = requestLink("oneTime", amount, `One-time support ${amount} €`);
 });
 
-setLanguage(currentLang);
+setLanguage(currentLang, Boolean(localStorage.getItem("mazest-subscribe-language")));
