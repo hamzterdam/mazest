@@ -292,6 +292,42 @@ p {
   font-weight: 900;
 }
 
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.payment-methods span {
+  margin-right: 4px;
+  color: #52665d;
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.payment-methods strong {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 0 11px;
+  color: var(--pine);
+  background: #fffaf0;
+  border: 1px solid rgba(32, 56, 47, 0.16);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.payment-methods .paypal-badge {
+  color: #003087;
+}
+
+.payment-methods.compact {
+  margin-top: 14px;
+}
+
 .one-time {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 440px);
